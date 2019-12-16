@@ -39,7 +39,7 @@ module ActsAsResource
         end
         if scopes.present?
           scope_hash = params.select{|filter| scopes.include?(filter)}
-          @resources = send_scope_chain(@clazz, scope_hash)
+          @resources = send_scope_chain(@resources, scope_hash)
         end
       end
 
